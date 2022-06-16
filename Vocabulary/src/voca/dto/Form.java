@@ -4,6 +4,14 @@ public class Form {
 
 	private int formId;
 	private String formName;
+	
+	public Form() {};
+	
+	public Form(int formId, String formName) {
+		super();
+		this.formId = formId;
+		this.formName = formName;
+	}
 
 	public int getFormId() {
 		return formId;
@@ -20,5 +28,14 @@ public class Form {
 	public void setFormName(String formName) {
 		this.formName = formName;
 	}
+
+
+
+	@Override
+	public String toString() {
+		return "Form [formId=" + formId + ", formName=" + formName + "]";
+	}
+	
+	
 
 }

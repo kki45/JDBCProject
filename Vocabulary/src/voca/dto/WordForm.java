@@ -1,19 +1,21 @@
 package voca.dto;
 
-public class Word {
+public class WordForm {
 
 	private int wordId;
 	private String englishWord;
+	private String formName;
 	private String koreanWord;
 	
-	public Word(int wordId, String englishWord, String koreanWord) {
-
+	public WordForm() {};
+	
+	public WordForm(int wordId, String englishWord, String formName, String koreanWord) {
+		super();
 		this.wordId = wordId;
 		this.englishWord = englishWord;
+		this.formName = formName;
 		this.koreanWord = koreanWord;
-
 	}
-
 
 	public int getWordId() {
 		return wordId;
@@ -31,6 +33,14 @@ public class Word {
 		this.englishWord = englishWord;
 	}
 
+	public String getFormName() {
+		return formName;
+	}
+
+	public void setFormName(String formName) {
+		this.formName = formName;
+	}
+
 	public String getKoreanWord() {
 		return koreanWord;
 	}
@@ -41,7 +51,11 @@ public class Word {
 
 	@Override
 	public String toString() {
-		return "[wordId=" + wordId + ", englishWord=" + englishWord + ", koreanWord=" + koreanWord + "]";
+		return "WordForm [wordId=" + wordId + ", englishWord=" + englishWord + ", formName=" + formName
+				+ ", koreanWord=" + koreanWord + "]";
 	}
+	
+	
+	
 	
 }
