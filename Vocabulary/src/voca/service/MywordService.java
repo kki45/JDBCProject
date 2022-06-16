@@ -1,5 +1,7 @@
 package voca.service;
 
+import voca.model.MywordInterface;
+
 public class MywordService implements MywordInterface{
 
 	@Override

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import voca.dao.WordDAO;
 import voca.dto.Word;
+import voca.model.WordInterface;
 
 public class WordService implements WordInterface{
 

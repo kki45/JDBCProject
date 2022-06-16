@@ -1,4 +1,4 @@
-package voca.service;
+package voca.model;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
