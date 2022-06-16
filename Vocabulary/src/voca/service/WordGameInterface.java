@@ -1,5 +1,6 @@
 package voca.service;
 
+
 public interface WordGameInterface {
 	
 	public void wordGameSelect();
