@@ -6,6 +6,14 @@ public class Word {
 	private String englishWord;
 	private String koreanWord;
 	
+	public Word(int wordId, String englishWord, String koreanWord) {
+
+		this.wordId = wordId;
+		this.englishWord = englishWord;
+		this.koreanWord = koreanWord;
+
+	}
+	
 	public int getWordId() {
 		return wordId;
 	}
@@ -30,4 +38,9 @@ public class Word {
 		this.koreanWord = koreanWord;
 	}
 
+	@Override
+	public String toString() {
+		return "[wordId=" + wordId + ", englishWord=" + englishWord + ", koreanWord=" + koreanWord + "]";
+	}
+	
 }
