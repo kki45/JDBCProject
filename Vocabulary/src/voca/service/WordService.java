@@ -1,11 +1,26 @@
 package voca.service;
 
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import voca.dao.WordDAO;
+import voca.dto.Word;
+import voca.model.WordInterface;
+
 public class WordService implements WordInterface{
 
+	private static WordService instance = new WordService();
+
+	private WordService() {}
+
+	public static WordService getInstance(){
+		return instance;
+	}
+
 	@Override
-	public void wordSelect() {
-		// TODO Auto-generated method stub
-		
+	public ArrayList<Word> getAllVoca() throws SQLException {
+		ArrayList<Word> allVoca = WordDAO.getAllVoca(); 
+		return allVoca;
 	}
 
 	@Override

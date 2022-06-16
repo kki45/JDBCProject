@@ -1,4 +1,5 @@
-package voca.service;
+package voca.model;
+
 
 public interface WordGameInterface {
 	
