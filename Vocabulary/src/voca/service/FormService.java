@@ -1,5 +1,7 @@
 package voca.service;
 
+import voca.model.FormInterface;
+
 public class FormService implements FormInterface{
 
 	@Override

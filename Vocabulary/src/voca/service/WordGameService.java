@@ -1,5 +1,7 @@
 package voca.service;
 
+import voca.model.WordGameInterface;
+
 public class WordGameService implements WordGameInterface{
 
 	@Override
