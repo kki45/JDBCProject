@@ -7,6 +7,9 @@ import java.util.regex.Pattern;
 import voca.vo.WordFormVO;
 import voca.exception.ValidationException;
 
+import java.sql.SQLException;
+
+import voca.dto.WordForm;
 import voca.service.WordService;
 import voca.validation.Validation;
 import voca.view.RunningEndView;
@@ -23,6 +26,14 @@ public class WordController {
 
 	public static WordController getInstance() {
 		return instance;
+	}
+	
+	public void joinVoca() {
+		try {
+			RunningEndView.joinVoca(service.joinVoca());
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 	// 모든 단어 출력
