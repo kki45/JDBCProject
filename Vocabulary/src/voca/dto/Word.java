@@ -6,13 +6,18 @@ public class Word {
 	private String englishWord;
 	private String koreanWord;
 	private int formId;
+
+
+	public void setFormId(int formId) {
+		this.formId = formId;
+	}
+
+	public Word() {};
 	
 	public Word(int wordId, String englishWord, String koreanWord) {
-
 		this.wordId = wordId;
 		this.englishWord = englishWord;
 		this.koreanWord = koreanWord;
-
 	}
 	
 	public int getWordId() {
@@ -41,10 +46,6 @@ public class Word {
 
 	public int getFormId() {
 		return formId;
-	}
-
-	public void setFormId(int formId) {
-		this.formId = formId;
 	}
 	
 	@Override
