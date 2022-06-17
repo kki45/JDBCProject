@@ -2,16 +2,21 @@ package voca.service;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Random;
 
 import voca.dao.WordGameDAO;
 import voca.dto.Word;
 import voca.dto.WordGameDTO;
 import voca.model.WordGameInterface;
+import voca.vo.WordFormVO;
 
 public class WordGameService implements WordGameInterface{
 
 	private static WordGameService instance = new WordGameService();
-
+	
+	public WordService wordService = WordService.getInstance();
+	static ArrayList<Integer> quizNumber = null;
+	
 	private WordGameService() {}
 
 	public static WordGameService getInstance() {
@@ -20,7 +25,7 @@ public class WordGameService implements WordGameInterface{
 
 	@Override
 	public WordGameDTO selectWordGame(String name, int score) throws SQLException {
-		return WordGameDAO.selectWordgame(name, score);
+		return WordGameDAO.selectWordGame(name, score);
 	}
 	@Override
 	public void selectAllWordGame() {
@@ -44,9 +49,39 @@ public class WordGameService implements WordGameInterface{
 
 	@Override
 	public ArrayList<Word> wordGameStart() throws SQLException {
-		return WordGameDAO.wordgameList();
+		
+		ArrayList<WordFormVO> allList = wordService.getAllVoca();
+		ArrayList<Word> gameList = new ArrayList<Word>();;
+		Random rand = new Random();
+		int randValue = -1;
+		quizNumber = new ArrayList<Integer>(allList.size());
+		while(true) {
+			randValue = rand.nextInt(allList.size());
+			boolean ans = quizNumber.contains(randValue);
+			if(ans == false) {
+				quizNumber.add(randValue);
+				gameList.add(new Word(allList.get(randValue).getWordId(),
+						allList.get(randValue).getEnglishWord(),
+						allList.get(randValue).getKoreanWord()));
+
+			}
+			if(quizNumber.size() == 10) {
+				break;
+			}
+		}
+		
+		return gameList;
 	}
 
+	@Override
+	public String getEnglishAnswer(String quiz) throws SQLException{
+		String answer = "";
+		
+		answer = WordGameDAO.getEnglishAnswer(quiz);
+		
+		return answer;
+	}
+	
 	@Override
 	public int calcScore(String[] qna) throws SQLException {
 		return WordGameDAO.caculateScore(qna);

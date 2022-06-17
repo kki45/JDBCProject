@@ -20,6 +20,8 @@ public interface WordGameInterface {
 
 	public ArrayList<Word> wordGameStart() throws SQLException;
 
+	public String getEnglishAnswer(String quiz) throws SQLException;
+	
 	public int calcScore(String[] qna) throws SQLException;
 
 

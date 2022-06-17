@@ -27,3 +27,7 @@ DESC wordgame;
 
 -- UPDATE wordgame SET user_name="check2" WHERE game_number=3;
 -- commit;
+
+-- SELECT english_word
+-- FROM word
+-- WHERE korean_word = '익숙한, 친숙한';

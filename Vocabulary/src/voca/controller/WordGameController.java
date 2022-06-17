@@ -38,6 +38,18 @@ public class WordGameController {
 		}
 		return correct;
 	}
+	
+	public String getEnglishAnswer(String quiz) {
+		String answer = "";
+		
+		try {
+			answer = service.getEnglishAnswer(quiz);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return answer;
+	}
 
 	public void insertWordGame(String name, int score ) {
 		try {

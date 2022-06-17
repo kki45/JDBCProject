@@ -20,7 +20,7 @@ public class RunningStartView {
 		System.out.print("사용자명을 입력하세요 : ");
 		Scanner scan = new Scanner(System.in);
 
-		String name = scan.next();
+		String name = scan.nextLine();
 		System.out.println(name);
 		System.out.println();
 
@@ -35,9 +35,10 @@ public class RunningStartView {
 			String quiz = korean.get(i);
 			System.out.println((i+1) + "번째 답을 입력하세요 : " + quiz);		
 			System.out.print("입력 : ");
-			String answer = scan.next();
-			System.out.println("답: " + answer + "\n");
-			qna = new String[]{quiz, answer};
+			String userAnswer = scan.nextLine();
+			String answer = wgController.getEnglishAnswer(quiz);
+			System.out.println("정답: " + answer + "\n");
+			qna = new String[]{quiz, userAnswer};
 			score += wgController.calcScore(qna);
 			i++;
 		}

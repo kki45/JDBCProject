@@ -15,45 +15,6 @@ import voca.vo.WordFormVO;
 
 public class WordGameDAO {
 	static int sameCheck = -1;
-	static ArrayList<Integer> quizNumber = null;
-
-	public static ArrayList<Word> wordgameList() throws SQLException{
-		Connection conn = null;
-		Statement stmt = null;
-		ArrayList<WordFormVO> allList = null;
-		Random rand = new Random();
-		ArrayList<Word> gameList = null;
-		int randValue = -1;
-		gameList = new ArrayList<Word>();
-
-
-		try {
-			conn = DBUtil.getConnection();
-			stmt = conn.createStatement();
-			allList = WordDAO.getAllVoca();
-
-			quizNumber = new ArrayList<Integer>(allList.size());
-			while(true) {
-				randValue = rand.nextInt(allList.size());
-				boolean ans = quizNumber.contains(randValue);
-				if(ans == false) {
-					quizNumber.add(randValue);
-					gameList.add(new Word(allList.get(randValue).getWordId(),
-							allList.get(randValue).getEnglishWord(),
-							allList.get(randValue).getKoreanWord()));
-
-				}
-				if(quizNumber.size() == 10) {
-					break;
-				}
-			}
-		} finally {
-			DBUtil.close(conn, stmt);
-		}
-
-		return gameList;
-	}	// end wordgameList()
-
 
 	public static int caculateScore(String[] qna) throws SQLException{
 		int correct = 0;
@@ -105,8 +66,30 @@ public class WordGameDAO {
 
 		return false;
 	}
+	
+	public static String getEnglishAnswer(String quiz) throws SQLException {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		String answer = "";
+		try {
+			conn = DBUtil.getConnection();
+			pstmt = conn.prepareStatement("SELECT english_word " + 
+					"FROM word " + 
+					"WHERE korean_word = ?");
+			pstmt.setString(1, quiz);
+			rset = pstmt.executeQuery();
+			while (rset.next()) {
+				answer = rset.getString(1);
+			}
+			
+		} finally {
+			DBUtil.close(conn, pstmt, rset);
+		}
+		return answer;
+	}
 
-	public static WordGameDTO selectWordgame(String name, int score)throws SQLException  {
+	public static WordGameDTO selectWordGame(String name, int score)throws SQLException  {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
