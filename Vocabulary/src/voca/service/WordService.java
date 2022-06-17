@@ -4,41 +4,52 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import voca.dao.WordDAO;
+import voca.dto.Form;
 import voca.dto.Word;
+import voca.vo.WordFormVO;
 import voca.model.WordInterface;
 
-public class WordService implements WordInterface{
+public class WordService implements WordInterface {
 
 	private static WordService instance = new WordService();
 
-	private WordService() {}
+	private WordService() {
+	}
 
-	public static WordService getInstance(){
+	public static WordService getInstance() {
 		return instance;
 	}
 
 	@Override
-	public ArrayList<Word> getAllVoca() throws SQLException {
-		ArrayList<Word> allVoca = WordDAO.getAllVoca(); 
+	public ArrayList<WordFormVO> getAllVoca() throws SQLException {
+		ArrayList<WordFormVO> allVoca = WordDAO.getAllVoca();
 		return allVoca;
 	}
 
-	@Override
-	public void wordInsert() {
-		// TODO Auto-generated method stub
-		
+	public WordFormVO searchVoca(String koreanWord) throws SQLException {
+
+		return WordDAO.searchVoca(koreanWord);
 	}
 
-	@Override
-	public void wordUpdate() {
-		// TODO Auto-generated method stub
-		
+	public boolean addVoca(WordFormVO word) throws SQLException {
+		return WordDAO.addVoca(word);
 	}
 
-	@Override
-	public void wordDelete() {
-		// TODO Auto-generated method stub
-		
+	public boolean updateVoca(WordFormVO wordFormVo) throws SQLException {
+		return WordDAO.updateVoca(wordFormVo);
 	}
+
+	public boolean deleteVoca(WordFormVO wordFormVO) throws SQLException {
+		return WordDAO.deleteVoca(wordFormVO);
+	}
+
+	//   public boolean addWord(Word word) {
+	//      
+	//   }
+	//   
+	//   public boolean addForm(Word word) {
+	//      
+	//   }
+
 
 }
