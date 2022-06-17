@@ -4,16 +4,43 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
+import voca.vo.WordFormVO;
 import voca.controller.WordController;
 import voca.controller.WordGameController;
+import voca.exception.ValidationException;
 
 public class RunningStartView {
-	public static void main(String[] args) {
-		WordController wordController = WordController.getInstance();
+	public static void main(String[] args) throws Exception {
+  	WordController wordController = WordController.getInstance();
 		WordGameController wgController = WordGameController.getInstance();
 
-		//	System.out.println("모든 단어 검색");
-		//	wordController.allVoca();
+		System.out.println("모든 단어 검색 시작");
+		wordController.allVoca();
+		System.out.println("=============================");
+		System.out.println();
+
+		System.out.println("한글 단어 검색 후 영어 출력 시작");
+		wordController.searchVoca("양보하다");
+		System.out.println("=============================");
+		System.out.println();
+
+		System.out.println("영어 단어 추가 시작");
+		wordController.addVoca(new WordFormVO("jejunum", "빈창자", 1));
+		wordController.searchVoca("빈창자");
+		System.out.println("=============================");
+		System.out.println();
+		
+		
+		wordController.updateVoca(new WordFormVO(62 , "jejunum", "빈창자" , 1));
+//		wordController.updateVoca(new WordFormVO(64, "cancer", "암", 1));
+		wordController.searchVoca("암");
+		System.out.println("=============================");
+		System.out.println();
+
+		wordController.deleteVoca(new WordFormVO(64));
+		wordController.searchVoca("암");
+		System.out.println();
+		System.out.println("=============================");
 
 
 		System.out.println("\n========단어 맞추기 게임========");
@@ -46,6 +73,7 @@ public class RunningStartView {
 		int result = score*5;
 		wgController.insertWordGame(name, result);
 		wgController.showScore(name, result);
+    System.out.println("=============================");
 
 
 	}

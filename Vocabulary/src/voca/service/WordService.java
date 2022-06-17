@@ -9,44 +9,38 @@ import voca.dto.Word;
 import voca.vo.WordFormVO;
 import voca.model.WordInterface;
 
-public class WordService implements WordInterface{
+public class WordService implements WordInterface {
 
 	private static WordService instance = new WordService();
 
-	private WordService() {}
+	private WordService() {
+	}
 
-	public static WordService getInstance(){
+	public static WordService getInstance() {
 		return instance;
 	}
 
 	@Override
 	public ArrayList<WordFormVO> getAllVoca() throws SQLException {
-		ArrayList<WordFormVO> allVoca = WordDAO.getAllVoca(); 
+		ArrayList<WordFormVO> allVoca = WordDAO.getAllVoca();
 		return allVoca;
-	}
-
-	@Override
-	public void wordInsert() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void wordUpdate() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void wordDelete() {
-		// TODO Auto-generated method stub
-
 	}
 
 	public WordFormVO searchVoca(String koreanWord) throws SQLException {
 
-		WordFormVO wordFormVO = WordDAO.searchVoca(koreanWord);
-		return wordFormVO;
+		return WordDAO.searchVoca(koreanWord);
+	}
+
+	public boolean addVoca(WordFormVO word) throws SQLException {
+		return WordDAO.addVoca(word);
+	}
+
+	public boolean updateVoca(WordFormVO wordFormVo) throws SQLException {
+		return WordDAO.updateVoca(wordFormVo);
+	}
+
+	public boolean deleteVoca(WordFormVO wordFormVO) throws SQLException {
+		return WordDAO.deleteVoca(wordFormVO);
 	}
 
 	//   public boolean addWord(Word word) {

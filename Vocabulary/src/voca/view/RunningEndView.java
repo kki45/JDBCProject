@@ -8,27 +8,25 @@ import voca.vo.WordFormVO;
 
 public class RunningEndView {
 
+  // 모든 word 가져오기
 	public static void getAllVoca(ArrayList<WordFormVO> arrayList) {
-
 		int length = arrayList.size();
 		if (length != 0) {
 			for (int i = 0; i < length; i++) {
 				WordFormVO getData = arrayList.get(i);
-				//	            [ 1 apple (명) 사과 ]
 				System.out.println("[" + getData.getWordId() + " " + getData.getEnglishWord() + " " + "("
 						+ getData.getFormName() + ") " + getData.getKoreanWord() + "]");
 			}
 		}
 	}
 
+  // word 검색하기
 	public static void searchVoca(WordFormVO searchVoca) {
-		WordFormVO getData = searchVoca;
-		// [ 1 apple (명) 사과 ]
-		System.out.println("[" + getData.getWordId() + " " + getData.getEnglishWord() + " " + "("
-				+ getData.getFormName() + ") " + getData.getKoreanWord() + "]");
+		System.out.println("[" + searchVoca.getWordId() + " " + searchVoca.getEnglishWord() + " " + "("
+				+ searchVoca.getFormName() + ") " + searchVoca.getKoreanWord() + "]");
 	}
 
-
+  // WordGame 시작하기
 	public static ArrayList<String> getWordGameList(ArrayList<Word> gameList) {
 		ArrayList<String> korean = new ArrayList<String>();
 		for (Word word : gameList) {
@@ -37,6 +35,7 @@ public class RunningEndView {
 		return korean;
 	}
 
+  // WordGame 점수 불러오기
 	public static void searchWordGame(WordGameDTO searchWordGame) {
 		WordGameDTO getData = searchWordGame;
 
