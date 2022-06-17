@@ -5,13 +5,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import voca.dbutil.DBUtil;
-import voca.dto.MywordDTO;
 import voca.dto.Word;
 import voca.dto.WordForm;
-import voca.dto.WordMyword;
-import voca.dto.Form;
 import voca.vo.WordFormVO;
 
 
@@ -142,7 +138,6 @@ public class WordDAO {
 	}
 
 	public static boolean updateVoca(WordFormVO wordFormVo) throws SQLException {
-		WordFormVO Data = null;
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		try {
@@ -166,8 +161,6 @@ public class WordDAO {
 	}
 
 	public static boolean deleteVoca(WordFormVO wordFormVo) throws SQLException {
-		
-		WordFormVO Data = null;
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		try {

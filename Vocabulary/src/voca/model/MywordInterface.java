@@ -2,8 +2,6 @@ package voca.model;
 
 import java.sql.SQLException;
 
-import voca.dto.MywordDTO;
-import voca.dto.Word;
 import voca.exception.Notwordexception;
 
 public interface MywordInterface {

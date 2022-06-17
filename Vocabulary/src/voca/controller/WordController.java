@@ -1,15 +1,10 @@
 package voca.controller;
 
 import java.sql.SQLException;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import voca.vo.WordFormVO;
 import voca.exception.ValidationException;
 
-import java.sql.SQLException;
-
-import voca.dto.WordForm;
 import voca.service.WordService;
 import voca.validation.Validation;
 import voca.view.RunningEndView;
@@ -55,6 +50,7 @@ public class WordController {
 		
 		try {
 			if(validation.validationCheck(koreanWord).find() == true) {
+				@SuppressWarnings("unused")
 				ValidationException exception = new ValidationException("숫자는 입력 하실 수 없습니다.");
 			}
 //			
@@ -72,6 +68,7 @@ public class WordController {
 	public void addVoca(WordFormVO wordFormVO) {
 		try {
 			if(validation.validationCheck(wordFormVO.getKoreanWord()).find() == true) {
+				@SuppressWarnings("unused")
 				ValidationException exception = new ValidationException("숫자는 입력 하실 수 없습니다.");
 			}
 			
@@ -96,6 +93,7 @@ public class WordController {
 
 		try {
 			if(validation.validationCheck(wordFormVo.getKoreanWord()).find() == true) {
+				@SuppressWarnings("unused")
 				ValidationException exception = new ValidationException("숫자는 입력 하실 수 없습니다.");
 			}
 			

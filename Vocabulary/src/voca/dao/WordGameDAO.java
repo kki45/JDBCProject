@@ -4,14 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.Random;
 
 import voca.dbutil.DBUtil;
-import voca.dto.Word;
 import voca.dto.WordGameDTO;
-import voca.vo.WordFormVO;
 
 public class WordGameDAO {
 	static int sameCheck = -1;

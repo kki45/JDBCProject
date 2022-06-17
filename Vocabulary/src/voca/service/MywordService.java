@@ -3,11 +3,8 @@ package voca.service;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import voca.dao.FormDAO;
 import voca.dao.MywordDAO;
-import voca.dao.WordDAO;
 import voca.dto.MywordDTO;
-import voca.dto.Word;
 import voca.dto.WordMyword;
 import voca.exception.Notwordexception;
 import voca.model.MywordInterface;
@@ -43,6 +40,7 @@ public class MywordService implements MywordInterface{
 	}
 	
 	//즐겨찾기 추가
+	@SuppressWarnings("unused")
 	@Override
 	public boolean mywordInsert(int wordId) throws SQLException, Notwordexception {		
 //	public boolean mywordInsert(Word word) throws SQLException, Notwordexception {

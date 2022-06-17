@@ -2,7 +2,6 @@ package voca.view;
 
 import java.util.ArrayList;
 
-import voca.dto.MywordDTO;
 import voca.dto.Word;
 import voca.dto.WordForm;
 import voca.dto.WordMyword;
