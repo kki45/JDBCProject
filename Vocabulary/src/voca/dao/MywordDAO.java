@@ -8,7 +8,6 @@ import java.util.ArrayList;
 
 import voca.dbutil.DBUtil;
 import voca.dto.MywordDTO;
-import voca.dto.WordForm;
 import voca.dto.WordMyword;
 
 public class MywordDAO {

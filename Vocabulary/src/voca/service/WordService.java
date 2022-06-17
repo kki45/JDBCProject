@@ -4,8 +4,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import voca.dao.WordDAO;
-import voca.dto.Form;
-import voca.dto.Word;
 import voca.dto.WordForm;
 import voca.vo.WordFormVO;
 import voca.model.WordInterface;
