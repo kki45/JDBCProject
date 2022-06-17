@@ -20,13 +20,16 @@ public class RunningStartView {
 //		mycontroller.join2Voca();
 		
 		// 즐겨찾기에 단어추가하기
+		// myword에 단어 추가하는데 먼저  myword에 추가된 단어이면 북마크 불가능
+		// bookmark(new Word());
 		System.out.println("====영어단어 즐겨찾기하기====");
-//		mycontroller.bookmark(new MywordDTO(2, 2));
+		// myword - word
+//		mycontroller.bookmark(3);
 //		mycontroller.join2Voca();
 		
 		// 즐겨찾기에서 단어삭제하기
 		System.out.println("====영어단어 삭제하기====");
-//		mycontroller.deleteBmark(2);
+//		mycontroller.deleteBmark(6);
 //		mycontroller.join2Voca();
 
 		

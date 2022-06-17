@@ -2,17 +2,21 @@ package voca.model;
 
 import java.sql.SQLException;
 
+import exception.Notwordexception;
 import voca.dto.MywordDTO;
+import voca.dto.Word;
 
 public interface MywordInterface {
 	
-	public void mywordSelect();
+	public boolean mywordInsert(int wordId) throws SQLException, Notwordexception;
+//	public boolean mywordInsert(Word word) throws SQLException, Notwordexception;
 
-	public boolean mywordInsert(MywordDTO myword) throws SQLException;
 
-	public void mywordUpdate();
+	public boolean mywordDelete(int wordId) throws SQLException;
 
-	public boolean mywordDelete(int word_id) throws SQLException;
+
+
+
 
 
 

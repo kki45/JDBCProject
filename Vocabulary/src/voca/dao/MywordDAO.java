@@ -40,16 +40,40 @@ public class MywordDAO {
 			return list1;
 		}
 		
+		
+		// mywordT 출력
+		public static ArrayList<MywordDTO> myWordto() throws SQLException {
+			Connection con = null;
+			PreparedStatement pstmt = null;
+			ResultSet rset = null;
+			ArrayList<MywordDTO> list = null;
+
+			try {
+				con = DBUtil.getConnection();
+				pstmt = con.prepareStatement("select * from myword where myNumber= ?");
+				
+				rset = pstmt.executeQuery();
+
+				list = new ArrayList<MywordDTO>();
+				while (rset.next()) {
+					list.add(new MywordDTO(rset.getInt(1), rset.getInt(2)));
+				}
+			}
+			finally {
+				DBUtil.close(con, pstmt, rset);
+			}
+			return list;
+		}
+		
 		// 즐겨찾기에 영단어 추가
-		public static boolean addWord(MywordDTO myword) throws SQLException {
+		public static boolean addWord(int wordId) throws SQLException {
 			Connection con = null;
 			PreparedStatement pstmt = null;
 
 			try {
 				con = DBUtil.getConnection();
-				pstmt = con.prepareStatement("insert into myword values(?, ?)");
-				pstmt.setInt(1, myword.getMyNumber());
-				pstmt.setInt(2, myword.getWordId());
+				pstmt = con.prepareStatement("insert into myword(word_id) values(?)");
+				pstmt.setInt(1, wordId);
 				
 				int result = pstmt.executeUpdate();
 				
@@ -65,14 +89,14 @@ public class MywordDAO {
 		}
 		
 		//즐겨찾기에 영단어 삭제
-		public static boolean deleteWord(int word_id) throws SQLException {
+		public static boolean deleteWord(int my_number) throws SQLException {
 			Connection con = null;
 			PreparedStatement pstmt = null;
 
 			try {
 				con = DBUtil.getConnection();
-				pstmt = con.prepareStatement("delete from myword where word_id = ?");
-				pstmt.setInt(1, word_id);
+				pstmt = con.prepareStatement("delete from myword where my_number = ?");
+				pstmt.setInt(1, my_number);
 				
 				int result = pstmt.executeUpdate();
 				
