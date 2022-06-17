@@ -13,10 +13,10 @@ import voca.vo.WordFormVO;
 public class WordGameService implements WordGameInterface{
 
 	private static WordGameService instance = new WordGameService();
-	
+
 	public WordService wordService = WordService.getInstance();
 	static ArrayList<Integer> quizNumber = null;
-	
+
 	private WordGameService() {}
 
 	public static WordGameService getInstance() {
@@ -49,7 +49,7 @@ public class WordGameService implements WordGameInterface{
 
 	@Override
 	public ArrayList<Word> wordGameStart() throws SQLException {
-		
+
 		ArrayList<WordFormVO> allList = wordService.getAllVoca();
 		ArrayList<Word> gameList = new ArrayList<Word>();;
 		Random rand = new Random();
@@ -69,19 +69,19 @@ public class WordGameService implements WordGameInterface{
 				break;
 			}
 		}
-		
+
 		return gameList;
 	}
 
 	@Override
 	public String getEnglishAnswer(String quiz) throws SQLException{
 		String answer = "";
-		
+
 		answer = WordGameDAO.getEnglishAnswer(quiz);
-		
+
 		return answer;
 	}
-	
+
 	@Override
 	public int calcScore(String[] qna) throws SQLException {
 		return WordGameDAO.caculateScore(qna);

@@ -18,7 +18,7 @@ public class WordService implements WordInterface {
 	public static WordService getInstance() {
 		return instance;
 	}
-	
+
 	public ArrayList<WordForm> joinVoca() throws SQLException {
 		ArrayList<WordForm> joinVoca = WordDAO.joinVoca();
 		return joinVoca;

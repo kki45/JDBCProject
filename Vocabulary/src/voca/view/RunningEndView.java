@@ -11,7 +11,7 @@ import voca.vo.WordFormVO;
 
 public class RunningEndView {
 
-  // 모든 word 가져오기
+	// 모든 word 가져오기
 	public static void getAllVoca(ArrayList<WordFormVO> arrayList) {
 		int length = arrayList.size();
 		if (length != 0) {
@@ -23,13 +23,13 @@ public class RunningEndView {
 		}
 	}
 
-  // word 검색하기
+	// word 검색하기
 	public static void searchVoca(WordFormVO searchVoca) {
 		System.out.println("[" + searchVoca.getWordId() + " " + searchVoca.getEnglishWord() + " " + "("
 				+ searchVoca.getFormName() + ") " + searchVoca.getKoreanWord() + "]");
 	}
 
-  // WordGame 시작하기
+	// WordGame 시작하기
 	public static ArrayList<String> getWordGameList(ArrayList<Word> gameList) {
 		ArrayList<String> korean = new ArrayList<String>();
 		for (Word word : gameList) {
@@ -38,12 +38,12 @@ public class RunningEndView {
 		return korean;
 	}
 
-	
+
+	// join 
 	public static void joinVoca(ArrayList<WordForm> wordform) {
-		
 		System.out.println(wordform);
 	}
-	
+
 	// 즐겨찾기 전체출력
 	public static void join2Voca(ArrayList<WordMyword> join2Voca) {
 		int length = join2Voca.size();
@@ -52,17 +52,16 @@ public class RunningEndView {
 				System.out.println(join2Voca.get(index));
 			}
 		}
-		
 	}
-	
+
 	//예외 상황 출력
-		public static void showError(String message){
-			System.out.println(message);		
-		}
-	
+	public static void showError(String message){
+		System.out.println(message);		
+	}
 
 
-  // WordGame 점수 불러오기
+
+	// WordGame 점수 불러오기
 	public static void searchWordGame(WordGameDTO searchWordGame) {
 		WordGameDTO getData = searchWordGame;
 

@@ -32,9 +32,7 @@ public class WordController {
 	}
 
 	// 모든 단어 출력
-
 	public void allVoca() {
-
 		try {
 			RunningEndView.getAllVoca(service.getAllVoca());
 		} catch (Exception e) {
@@ -44,7 +42,6 @@ public class WordController {
 	}
 
 	// 힌 단어 출력
-
 	public boolean searchVoca(String koreanWord) throws SQLException, ValidationException  {
 
 		
@@ -53,18 +50,15 @@ public class WordController {
 				@SuppressWarnings("unused")
 				ValidationException exception = new ValidationException("숫자는 입력 하실 수 없습니다.");
 			}
-//			
 			RunningEndView.searchVoca(service.searchVoca(koreanWord));
 			return true;
 		} catch (NullPointerException n) {
 			System.out.println("검색 결과가 존재 하지 않습니다.");
 		}
 		return false;
-
 	}
 
 	// 영어단어 추가
-
 	public void addVoca(WordFormVO wordFormVO) {
 		try {
 			if(validation.validationCheck(wordFormVO.getKoreanWord()).find() == true) {
@@ -81,14 +75,12 @@ public class WordController {
 					System.out.println("단어가 추가 되었습니다.");
 				}
 			}
-			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
 	// 영어단어 수정
-
 	public void updateVoca(WordFormVO wordFormVo) {
 
 		try {
@@ -96,7 +88,6 @@ public class WordController {
 				@SuppressWarnings("unused")
 				ValidationException exception = new ValidationException("숫자는 입력 하실 수 없습니다.");
 			}
-			
 			boolean updateVoca = service.updateVoca(wordFormVo);
 			if (updateVoca == true) {
 				System.out.println("단어가 수정 되었습니다.");
@@ -104,13 +95,10 @@ public class WordController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 	}
 
 	// 영어단어 삭제
-
 	public void deleteVoca(WordFormVO wordFormVo) {
-
 		try {
 			boolean deleteVoca = service.deleteVoca(wordFormVo);
 			if (deleteVoca == true) {
@@ -119,7 +107,8 @@ public class WordController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 	}
+	
+	
 
 }

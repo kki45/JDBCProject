@@ -12,7 +12,8 @@ public class RunningStartView {
 		@SuppressWarnings("unused")
 		WordController wordController = WordController.getInstance();
 		WordGameController wgController = WordGameController.getInstance();
-//
+		
+		// m.y. //
 //		System.out.println("모든 단어 검색 시작");
 //		wordController.allVoca();
 //		System.out.println("=============================");
@@ -40,43 +41,44 @@ public class RunningStartView {
 //		//		wordController.searchVoca("암");
 //		System.out.println();
 //		System.out.println("=============================");
-
-
-				System.out.println("\n========단어 맞추기 게임========");
-				System.out.print("사용자명을 입력하세요 : ");
-				Scanner scan = new Scanner(System.in);
+		// m.y. //
 		
-				String name = scan.nextLine();
-				System.out.println(name);
-				System.out.println();
-		
-				String[] qna = new String[2];
-				int score = 0;
-				ArrayList<String> korean = null;
-		
-				korean = WordGameController.wordGameList();
-		
-				int i=0;
-				while(i < korean.size()) {
-					String quiz = korean.get(i);
-					System.out.println((i+1) + "번째 답을 입력하세요 : " + quiz);		
-					System.out.print("입력 : ");
-					String userAnswer = scan.nextLine();
-					String answer = wgController.getEnglishAnswer(quiz);
-					System.out.println("정답: " + answer + "\n");
-					qna = new String[]{quiz, userAnswer};
-					score += wgController.calcScore(qna);
-					i++;
-				}
-				scan.close();
-				int result = score*5;
-				wgController.insertWordGame(name, result);
-				wgController.showScore(name, result);
-		System.out.println("=============================");
+		// y.h. //
+//		System.out.println("\n========단어 맞추기 게임========");
+//		System.out.print("사용자명을 입력하세요 : ");
+//		Scanner scan = new Scanner(System.in);
+//
+//		String name = scan.nextLine();
+//		System.out.println(name);
+//		System.out.println();
+//
+//		String[] qna = new String[2];
+//		int score = 0;
+//		ArrayList<String> korean = null;
+//
+//		korean = WordGameController.wordGameList();
+//
+//		int i=0;
+//		while(i < korean.size()) {
+//			String quiz = korean.get(i);
+//			System.out.println((i+1) + "번째 답을 입력하세요 : " + quiz);		
+//			System.out.print("입력 : ");
+//			String userAnswer = scan.nextLine();
+//			String answer = wgController.getEnglishAnswer(quiz);
+//			System.out.println("정답: " + answer + "\n");
+//			qna = new String[]{quiz, userAnswer};
+//			score += wgController.calcScore(qna);
+//			i++;
+//		}
+//		scan.close();
+//		int result = score*5;
+//		wgController.insertWordGame(name, result);
+//		wgController.showScore(name, result);
+//		System.out.println("=============================");
+		// y.h. //
 
 
-
-
+		// y.j. //
 //		WordController controller = WordController.getInstance();
 //		MywordController mycontroller = MywordController.getInstance();
 //
@@ -102,6 +104,7 @@ public class RunningStartView {
 //		System.out.println("====영어단어 삭제하기====");
 //		mycontroller.deleteBmark(6);
 //		//		mycontroller.join2Voca();
+		// y.j. //
 
 	}
 }

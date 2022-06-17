@@ -11,6 +11,7 @@ import voca.dto.WordGameDTO;
 public class WordGameDAO {
 	static int sameCheck = -1;
 
+	// 정답 확인 메소드
 	public static int caculateScore(String[] qna) throws SQLException{
 		int correct = 0;
 		Connection conn = null;
@@ -38,30 +39,7 @@ public class WordGameDAO {
 		return correct;
 	}
 
-
-	public static boolean insertWordgame(String name, int score) throws SQLException {
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		int result = 0;
-
-		try {
-			conn = DBUtil.getConnection();
-			pstmt = conn.prepareStatement("INSERT INTO wordgame(user_name, score, date) "
-					+ "VALUES(?, ?, sysdate())");
-			pstmt.setString(1, name);
-			pstmt.setInt(2, score);
-			result = pstmt.executeUpdate();
-			if(result == 1) {
-				return true;
-			}
-
-		} finally {
-			DBUtil.close(conn, pstmt);
-		}
-
-		return false;
-	}
-	
+	// 영어 정답 가져오기
 	public static String getEnglishAnswer(String quiz) throws SQLException {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -77,13 +55,36 @@ public class WordGameDAO {
 			while (rset.next()) {
 				answer = rset.getString(1);
 			}
-			
 		} finally {
 			DBUtil.close(conn, pstmt, rset);
 		}
 		return answer;
 	}
 
+	// WordGame DB 추가
+	public static boolean insertWordgame(String name, int score) throws SQLException {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		int result = 0;
+
+		try {
+			conn = DBUtil.getConnection();
+			pstmt = conn.prepareStatement("INSERT INTO wordgame(user_name, score, date) "
+					+ "VALUES(?, ?, sysdate())");
+			pstmt.setString(1, name);
+			pstmt.setInt(2, score);
+			result = pstmt.executeUpdate();
+			if(result == 1) {
+				return true;
+			}
+		} finally {
+			DBUtil.close(conn, pstmt);
+		}
+
+		return false;
+	}
+
+	// WordGame DB에서 user_name과 score로 정보 가져오기
 	public static WordGameDTO selectWordGame(String name, int score)throws SQLException  {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -105,8 +106,6 @@ public class WordGameDAO {
 		} finally {
 			DBUtil.close(conn, pstmt, rset);
 		}
-
-
 		return result;
 	}
 
