@@ -9,6 +9,15 @@ public class WordGameDTO {
 	private int score;
 	private Date date;
 
+	public WordGameDTO() {}
+
+	public WordGameDTO(String userName, int score, Date date) {
+		super();
+		this.userName = userName;
+		this.score = score;
+		this.date = date;
+	}
+
 	public int getGameNumber() {
 		return gameNumber;
 	}

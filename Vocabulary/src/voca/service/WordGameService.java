@@ -5,21 +5,26 @@ import java.util.ArrayList;
 
 import voca.dao.WordGameDAO;
 import voca.dto.Word;
+import voca.dto.WordGameDTO;
 import voca.model.WordGameInterface;
 
 public class WordGameService implements WordGameInterface{
 
 	private static WordGameService instance = new WordGameService();
-	
+
 	private WordGameService() {}
-	
+
 	public static WordGameService getInstance() {
 		return instance;
 	}
-	
+
 	@Override
-	public void selectWordGame() {
-		
+	public WordGameDTO selectWordGame(String name, int score) throws SQLException {
+		return WordGameDAO.selectWordgame(name, score);
+	}
+	@Override
+	public void selectAllWordGame() {
+
 	}
 
 	@Override
@@ -29,14 +34,14 @@ public class WordGameService implements WordGameInterface{
 
 	@Override
 	public void updateWordGame() {
-		
+
 	}
 
 	@Override
 	public void deleteWordGame() {
-		
+
 	}
-	
+
 	@Override
 	public ArrayList<Word> wordGameStart() throws SQLException {
 		return WordGameDAO.wordgameList();
