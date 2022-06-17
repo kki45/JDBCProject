@@ -13,6 +13,16 @@ public class Form {
 		this.formName = formName;
 	}
 
+	public Form() {
+
+	}
+
+	public Form(int formId, String formName) {
+		super();
+		this.formId = formId;
+		this.formName = formName;
+	}
+
 	public int getFormId() {
 		return formId;
 	}

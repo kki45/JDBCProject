@@ -1,4 +1,4 @@
--- USE word;-- 
+USE word;
 
 SELECT * FROM form;
 SELECT * FROM myword;
@@ -63,9 +63,8 @@ SELECT * FROM wordgame;
 
 -- insert into word(english_word, korean_word, form_id) values ( "nail", "손톱, 네일", 1);
 -- insert into word(english_word, korean_word, form_id) values ( "nearby", "근처의, 인근의", 4);
-
--- insert into word(english_word, korean_word, form_id) values ( "nearby", "근처의, 인근의", 4);
--- insert into word(english_word, korean_word, form_id) values ( "nearby", "근처의, 인근의", 4);
+-- insert into word(english_word, korean_word, form_id) values ( "notification", "통보, 알림", 1);
+-- insert into word(english_word, korean_word, form_id) values ( "novelty", "새로움, 신기로움", 1);
 
 -- insert into word(english_word, korean_word, form_id) values ( "option", "선택, 방법", 1);
 -- insert into word(english_word, korean_word, form_id) values ( "order", "주문하다, 명령하다", 2);
@@ -97,3 +96,4 @@ SELECT * FROM wordgame;
 
 -- insert into word(english_word, korean_word, form_id) values ( "yet", "아직, 그러나", 4);
 -- insert into word(english_word, korean_word, form_id) values ( "yield", "양보하다, 굴복하다", 2);
+
