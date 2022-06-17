@@ -68,7 +68,7 @@ public class WordDAO {
 		return list;
 	}
 	
-	// word테이블 검색
+	// word 테이블 검색
 	public static Word getWord(int wordId) throws SQLException {
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -93,6 +93,7 @@ public class WordDAO {
 		
 	}
 
+	// word 테이블 join 후, 출력
 	public static WordFormVO searchVoca(String koreanWord) throws SQLException {
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -115,6 +116,7 @@ public class WordDAO {
 		return result;
 	}
 
+	// word 테이블 추가
 	public static boolean addVoca(WordFormVO word) throws SQLException {
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -137,6 +139,7 @@ public class WordDAO {
 		return false;
 	}
 
+	// word 테이블 수정
 	public static boolean updateVoca(WordFormVO wordFormVo) throws SQLException {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -160,6 +163,7 @@ public class WordDAO {
 		return false;
 	}
 
+	// word 테이블 삭제
 	public static boolean deleteVoca(WordFormVO wordFormVo) throws SQLException {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
