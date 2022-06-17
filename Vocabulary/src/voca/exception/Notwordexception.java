@@ -1,4 +1,4 @@
-package exception;
+package voca.exception;
 
 public class Notwordexception extends Exception{
 	public Notwordexception() {};
