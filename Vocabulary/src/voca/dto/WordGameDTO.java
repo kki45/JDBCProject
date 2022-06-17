@@ -2,7 +2,7 @@ package voca.dto;
 
 import java.util.Date;
 
-public class WordGame {
+public class WordGameDTO {
 
 	private int gameNumber;
 	private String userName;

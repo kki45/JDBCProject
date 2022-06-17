@@ -1,31 +1,51 @@
 package voca.service;
 
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import voca.dao.WordGameDAO;
+import voca.dto.Word;
 import voca.model.WordGameInterface;
 
 public class WordGameService implements WordGameInterface{
 
+	private static WordGameService instance = new WordGameService();
+	
+	private WordGameService() {}
+	
+	public static WordGameService getInstance() {
+		return instance;
+	}
+	
 	@Override
-	public void wordGameSelect() {
-		// TODO Auto-generated method stub
+	public void selectWordGame() {
 		
 	}
 
 	@Override
-	public void wordGameInsert() {
-		// TODO Auto-generated method stub
+	public void insertWordGame(String name, int score) throws SQLException {
+		WordGameDAO.insertWordgame(name, score);
+	}
+
+	@Override
+	public void updateWordGame() {
 		
 	}
 
 	@Override
-	public void wordGameUpdate() {
-		// TODO Auto-generated method stub
+	public void deleteWordGame() {
 		
+	}
+	
+	@Override
+	public ArrayList<Word> wordGameStart() throws SQLException {
+		return WordGameDAO.wordgameList();
 	}
 
 	@Override
-	public void wordGameDelete() {
-		// TODO Auto-generated method stub
-		
+	public int calcScore(String[] qna) throws SQLException {
+		return WordGameDAO.caculateScore(qna);
 	}
+
 
 }

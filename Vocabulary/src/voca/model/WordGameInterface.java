@@ -1,16 +1,23 @@
 package voca.model;
 
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import voca.dto.Word;
 
 public interface WordGameInterface {
 	
-	public void wordGameSelect();
+	public void selectWordGame();
 
-	public void wordGameInsert();
+	public void insertWordGame(String name, int score) throws SQLException ;
 
-	public void wordGameUpdate();
+	public void updateWordGame();
 
-	public void wordGameDelete();
+	public void deleteWordGame();
 
+	public ArrayList<Word> wordGameStart() throws SQLException;
+	
+	public int calcScore(String[] qna) throws SQLException;
 	
 	
 }
