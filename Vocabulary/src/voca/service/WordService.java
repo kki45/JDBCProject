@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import voca.dao.WordDAO;
 import voca.dto.Form;
 import voca.dto.Word;
-import voca.dto.WordFormVO;
+import voca.vo.WordFormVO;
 import voca.model.WordInterface;
 
 public class WordService implements WordInterface {
@@ -42,5 +42,14 @@ public class WordService implements WordInterface {
 	public boolean deleteVoca(WordFormVO wordFormVO) throws SQLException {
 		return WordDAO.deleteVoca(wordFormVO);
 	}
+
+	//   public boolean addWord(Word word) {
+	//      
+	//   }
+	//   
+	//   public boolean addForm(Word word) {
+	//      
+	//   }
+
 
 }

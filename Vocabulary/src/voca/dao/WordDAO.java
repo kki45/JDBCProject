@@ -10,7 +10,7 @@ import java.util.HashMap;
 import voca.dbutil.DBUtil;
 import voca.dto.Form;
 import voca.dto.Word;
-import voca.dto.WordFormVO;
+import voca.vo.WordFormVO;
 
 public class WordDAO {
 
@@ -120,7 +120,6 @@ public class WordDAO {
 					"delete from word where word_id = ?; ");
 
 			pstmt.setInt(1, wordFormVo.getWordId());
-
 			int r = pstmt.executeUpdate();
 			if (r != 0) {
 				return true;

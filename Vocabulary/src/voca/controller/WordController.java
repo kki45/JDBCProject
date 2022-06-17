@@ -4,8 +4,9 @@ import java.sql.SQLException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import voca.dto.WordFormVO;
+import voca.vo.WordFormVO;
 import voca.exception.ValidationException;
+
 import voca.service.WordService;
 import voca.validation.Validation;
 import voca.view.RunningEndView;
@@ -13,16 +14,19 @@ import voca.view.RunningEndView;
 public class WordController {
 	private static WordController instance = new WordController();
 	private WordService service = WordService.getInstance();
+
 	private Validation validation = Validation.getInstance();
 	private WordController() {
 
 	}
+
 
 	public static WordController getInstance() {
 		return instance;
 	}
 
 	// 모든 단어 출력
+
 	public void allVoca() {
 
 		try {

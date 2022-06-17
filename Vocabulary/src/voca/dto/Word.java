@@ -15,11 +15,9 @@ public class Word {
 	public Word() {};
 	
 	public Word(int wordId, String englishWord, String koreanWord) {
-
 		this.wordId = wordId;
 		this.englishWord = englishWord;
 		this.koreanWord = koreanWord;
-
 	}
 	
 	public int getWordId() {
@@ -45,15 +43,15 @@ public class Word {
 	public void setKoreanWord(String koreanWord) {
 		this.koreanWord = koreanWord;
 	}
-	
-	
+
 	public int getFormId() {
 		return formId;
 	}
 	
 	@Override
 	public String toString() {
-		return "[wordId=" + wordId + ", englishWord=" + englishWord + ", koreanWord=" + koreanWord + "]";
+		return "Word [wordId=" + wordId + ", englishWord=" + englishWord + ", koreanWord=" + koreanWord + ", formId="
+				+ formId + "]";
 	}
 	
 }

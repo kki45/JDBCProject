@@ -4,7 +4,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import voca.dto.Word;
-import voca.dto.WordFormVO;
+import voca.vo.WordFormVO;
 
 public interface WordInterface {
 
@@ -17,5 +17,4 @@ public interface WordInterface {
 	public boolean updateVoca(WordFormVO wordFormVo) throws SQLException;
 	
 	public boolean deleteVoca(WordFormVO wordFormVO) throws SQLException;
-	
 }

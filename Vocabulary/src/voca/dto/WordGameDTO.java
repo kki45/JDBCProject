@@ -2,12 +2,21 @@ package voca.dto;
 
 import java.util.Date;
 
-public class WordGame {
+public class WordGameDTO {
 
 	private int gameNumber;
 	private String userName;
 	private int score;
 	private Date date;
+
+	public WordGameDTO() {}
+
+	public WordGameDTO(String userName, int score, Date date) {
+		super();
+		this.userName = userName;
+		this.score = score;
+		this.date = date;
+	}
 
 	public int getGameNumber() {
 		return gameNumber;
