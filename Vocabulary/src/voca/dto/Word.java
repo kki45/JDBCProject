@@ -6,6 +6,8 @@ public class Word {
 	private String englishWord;
 	private String koreanWord;
 	
+	public Word() {};
+	
 	public Word(int wordId, String englishWord, String koreanWord) {
 
 		this.wordId = wordId;
