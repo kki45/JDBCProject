@@ -2,9 +2,9 @@ package voca.model;
 
 import java.sql.SQLException;
 
-import exception.Notwordexception;
 import voca.dto.MywordDTO;
 import voca.dto.Word;
+import voca.exception.Notwordexception;
 
 public interface MywordInterface {
 	

@@ -3,13 +3,13 @@ package voca.service;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import exception.Notwordexception;
 import voca.dao.FormDAO;
 import voca.dao.MywordDAO;
 import voca.dao.WordDAO;
 import voca.dto.MywordDTO;
 import voca.dto.Word;
 import voca.dto.WordMyword;
+import voca.exception.Notwordexception;
 import voca.model.MywordInterface;
 
 public class MywordService implements MywordInterface{

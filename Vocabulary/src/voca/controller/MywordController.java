@@ -3,9 +3,9 @@ package voca.controller;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import exception.Notwordexception;
 import voca.dto.MywordDTO;
 import voca.dto.Word;
+import voca.exception.Notwordexception;
 import voca.service.MywordService;
 import voca.view.RunningEndView;
 
