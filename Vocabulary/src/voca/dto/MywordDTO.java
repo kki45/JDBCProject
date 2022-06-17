@@ -1,9 +1,17 @@
 package voca.dto;
 
-public class Myword {
+public class MywordDTO {
 	
 	private int myNumber;
 	private int wordId;
+	
+	public MywordDTO() {};
+	
+	public MywordDTO(int myNumber, int wordId) {
+		super();
+		this.myNumber = myNumber;
+		this.wordId = wordId;
+	}
 
 	public int getMyNumber() {
 		return myNumber;
@@ -21,4 +29,29 @@ public class Myword {
 		this.wordId = wordId;
 	}
 
+	@Override
+	public String toString() {
+		return "Myword [myNumber=" + myNumber + ", wordId=" + wordId + "]";
+	}
+	
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
