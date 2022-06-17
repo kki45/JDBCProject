@@ -26,7 +26,7 @@ public class RunningStartView {
 		
 		
 		controller.updateVoca(new WordFormVO(62 , "jejunum", "빈창자" , 1));
-		controller.updateVoca(new WordFormVO(64, "cancer", "암", 1));
+//		controller.updateVoca(new WordFormVO(64, "cancer", "암", 1));
 		controller.searchVoca("암");
 		System.out.println("=============================");
 		System.out.println();

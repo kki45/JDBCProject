@@ -7,12 +7,13 @@ import java.util.regex.Pattern;
 import voca.dto.WordFormVO;
 import voca.exception.ValidationException;
 import voca.service.WordService;
+import voca.validation.Validation;
 import voca.view.RunningEndView;
 
 public class WordController {
 	private static WordController instance = new WordController();
 	private WordService service = WordService.getInstance();
-
+	private Validation validation = Validation.getInstance();
 	private WordController() {
 
 	}
@@ -35,10 +36,10 @@ public class WordController {
 	// 힌 단어 출력
 
 	public boolean searchVoca(String koreanWord) throws SQLException, ValidationException  {
-		Pattern pattern = Pattern.compile("^[0-9]*$");
-		Matcher matcher = pattern.matcher(koreanWord);
+
+		
 		try {
-			if(matcher.find() == true) {
+			if(validation.validationCheck(koreanWord).find() == true) {
 				ValidationException exception = new ValidationException("숫자는 입력 하실 수 없습니다.");
 			}
 //			
@@ -55,6 +56,10 @@ public class WordController {
 
 	public void addVoca(WordFormVO wordFormVO) {
 		try {
+			if(validation.validationCheck(wordFormVO.getKoreanWord()).find() == true) {
+				ValidationException exception = new ValidationException("숫자는 입력 하실 수 없습니다.");
+			}
+			
 			boolean searchVoca = searchVoca(wordFormVO.getKoreanWord());
 			if(searchVoca == true) {
 				System.out.println("단어가 중복 됩니다.");
@@ -75,6 +80,10 @@ public class WordController {
 	public void updateVoca(WordFormVO wordFormVo) {
 
 		try {
+			if(validation.validationCheck(wordFormVo.getKoreanWord()).find() == true) {
+				ValidationException exception = new ValidationException("숫자는 입력 하실 수 없습니다.");
+			}
+			
 			boolean updateVoca = service.updateVoca(wordFormVo);
 			if (updateVoca == true) {
 				System.out.println("단어가 수정 되었습니다.");
