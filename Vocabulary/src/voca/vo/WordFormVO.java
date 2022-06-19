@@ -29,6 +29,7 @@ public class WordFormVO {
 		this.koreanWord = koreanWord;
 		this.formid = formid;
 	}
+	
 
 	public WordFormVO(int wordId) {
 		this.wordId = wordId;
@@ -53,5 +54,5 @@ public class WordFormVO {
 	public String getFormName() {
 		return formName;
 	}
-
+	
 }

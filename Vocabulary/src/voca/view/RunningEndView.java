@@ -56,6 +56,22 @@ public class RunningEndView {
 		
 	}
 	
+	//하나만 출력
+	public static void oneWord(WordMyword oneWord) {
+		System.out.println(oneWord);
+	}
+	
+	//여러개 출력	
+	public static void join3Voca(ArrayList<WordMyword> join3Voca) {
+		int length = join3Voca.size();
+		if( length != 0) {
+			for(int index = 0; index < length; index ++) {
+				System.out.println(join3Voca.get(index));
+			}
+		}
+	}
+	
+	
 	//예외 상황 출력
 		public static void showError(String message){
 			System.out.println(message);		

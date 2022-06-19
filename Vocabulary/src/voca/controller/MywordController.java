@@ -27,11 +27,9 @@ public class MywordController {
 	}
 	
 	// myword테이블에 word_id로 즐겨찾기하기
-//	public void bookmark(int myNumber, int wordId) {
 	public void bookmark(int wordId) {
 		try {
 			myservice.mywordInsert(wordId);
-//			myservice.mywordInsert(word);
 			RunningEndView.showError("즐겨찾기 성공");
 		}catch (Notwordexception e) {
 				RunningEndView.showError("즐겨찾기 실패2");
@@ -42,13 +40,34 @@ public class MywordController {
 	}
 	
 	//myword테이블에서 word_id로 삭제하기
-	public void deleteBmark(int word_id) {
+	
+	public void deleteBmark(int myNumber) {
 		try {
-			myservice.mywordDelete(word_id);
+			myservice.mywordDelete(myNumber);
 			RunningEndView.showError("즐겨찾기 삭제 성공");
 		} catch (SQLException e) {
 			e.printStackTrace();
-			RunningEndView.showError("즐겨찾기 삭제 실패");
+			RunningEndView.showError("즐겨찾기 삭제 실패1");
+		} catch (Notwordexception e) {
+			RunningEndView.showError("즐겨찾기 삭제 실패2");
+		}
+	}
+	
+	// 하나만 출력
+	public void oneWord(int myNumber) {
+		try {
+			RunningEndView.oneWord(myservice.oneWord(myNumber));
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	// 여러개 출력
+	public void join3Voca(int num) {
+		try {
+			RunningEndView.join3Voca(myservice.join3Voca(num));
+		} catch (SQLException e) {
+			e.printStackTrace();
 		}
 	}
 	

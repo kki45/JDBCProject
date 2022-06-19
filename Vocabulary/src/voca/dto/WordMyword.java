@@ -51,8 +51,8 @@ public class WordMyword {
 
 	@Override
 	public String toString() {
-		return "WordMyword [myNumber=" + myNumber + ", englishWord=" + englishWord + ", formName=" + formName
-				+ ", koreanWord=" + koreanWord + "]";
+		return "[" + myNumber + " " + englishWord + "(" + formName +")"
+				+ " " + koreanWord + "]";
 	};
 	
 	
