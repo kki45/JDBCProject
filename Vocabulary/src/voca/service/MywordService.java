@@ -10,6 +10,7 @@ import voca.dao.WordDAO;
 import voca.dto.MywordDTO;
 import voca.dto.Word;
 import voca.dto.WordMyword;
+import voca.dto.mywordIndexDTO;
 import voca.model.MywordInterface;
 import voca.vo.WordFormVO;
 
@@ -36,10 +37,10 @@ public class MywordService implements MywordInterface{
 	}
 	
 	// 여러개 출력
-	public ArrayList<WordMyword> join3Voca(int num) throws SQLException {
-		ArrayList<WordMyword> join3Voca = MywordDAO.join3Voca(num);
-		if(join3Voca.size() == num) {
-			return join3Voca;
+	public ArrayList<mywordIndexDTO> myIndex(int num) throws SQLException {
+		ArrayList<mywordIndexDTO> myIndex = MywordDAO.myIndex(num);
+		if(myIndex.size() == num) {
+			return myIndex;
 		}
 		return null;
 	}
