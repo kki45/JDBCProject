@@ -80,9 +80,6 @@ public class RunningStartView {
 
 
 		// y.j. //
-//		System.out.println("조인된 테이블1 출력");
-//		wordController.joinVoca();
-		
 		// myword 즐겨찾기 모두 출력
 		System.out.println("조인된 테이블2 출력");
 //		mycontroller.join2Voca();
