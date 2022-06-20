@@ -52,9 +52,11 @@ public class WordDAO {
 		ArrayList<WordFormVO> list = new ArrayList<WordFormVO>();
 		try {
 			con = DBUtil.getConnection();
-			pstmt = con.prepareStatement("select w.word_id, w.english_word  , w.korean_word , f.form_name"
-					+ " from word w " + " left outer join form f " + "	on w.form_id = f.form_id "
-					+ "	order by english_word asc ");
+			pstmt = con.prepareStatement("select @rownum:=@rownum+1 as row_num , w.english_word, w.korean_word , f.form_name " + 
+					" from word w " + 
+					" left outer join form f on w.form_id = f.form_id " + 
+					" WHERE (@rownum:=0)=0 " + 
+					" order by english_word asc  ");
 			rset = pstmt.executeQuery();
 
 			while (rset.next()) {
