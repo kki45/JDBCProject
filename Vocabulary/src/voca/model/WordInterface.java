@@ -3,7 +3,6 @@ package voca.model;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import voca.dto.Word;
 import voca.vo.WordFormVO;
 
 public interface WordInterface {

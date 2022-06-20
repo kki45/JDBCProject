@@ -54,9 +54,8 @@ public class WordGameController {
 	public void insertWordGame(String name, int score ) {
 		try {
 			service.insertWordGame(name, score);
-
-
 		} catch (SQLException e) {
+			RunningEndView.showError("추가 실패");
 			e.printStackTrace();
 		}
 	}
@@ -65,6 +64,7 @@ public class WordGameController {
 		try {
 			RunningEndView.searchWordGame(service.selectWordGame(name, score));
 		} catch (SQLException e) {
+			e.printStackTrace();
 		}
 	}
 

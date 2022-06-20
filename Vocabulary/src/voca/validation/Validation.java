@@ -3,9 +3,6 @@ package voca.validation;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import voca.controller.WordController;
-
-
 public class Validation {
 	
 	private static Validation instance = new Validation();
