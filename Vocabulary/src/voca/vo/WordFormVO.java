@@ -8,13 +8,7 @@ public class WordFormVO {
 	private String koreanWord;
 	private int formid;
 
-	public WordFormVO() {}
-
-	public WordFormVO(int wordId, String englishWord, String koreanWord, String formName) {
-		this.wordId = wordId;
-		this.englishWord = englishWord;
-		this.koreanWord = koreanWord;
-		this.formName = formName;
+	public WordFormVO() {
 	}
 
 	public WordFormVO(String englishWord, String koreanWord, int formid) {
@@ -23,11 +17,19 @@ public class WordFormVO {
 		this.formid = formid;
 	}
 
-	public WordFormVO(int formid ,  String englishWord, String koreanWord, int wordId) {
+	public WordFormVO(int wordId, String englishWord, String koreanWord, String formName) {
+		this.wordId = wordId;
+		this.englishWord = englishWord;
+		this.koreanWord = koreanWord;
+		this.formName = formName;
+	}
+
+	public WordFormVO(int wordId, String englishWord, String koreanWord, int formid) {
 		this.wordId = wordId;
 		this.englishWord = englishWord;
 		this.koreanWord = koreanWord;
 		this.formid = formid;
+
 	}
 
 	public WordFormVO(int wordId) {
