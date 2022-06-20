@@ -52,7 +52,7 @@ public class MywordController {
 		}
 	}
 	
-		// 하나만 출력
+	// 하나만 출력
 	public void oneWord(int myNumber) {
 		try {
 			RunningEndView.oneWord(myservice.oneWord(myNumber));
