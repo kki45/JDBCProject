@@ -12,16 +12,17 @@ public class RunningStartView {
 		@SuppressWarnings("unused")
 		WordController wordController = WordController.getInstance();
 		WordGameController wgController = WordGameController.getInstance();
+		MywordController mycontroller = MywordController.getInstance();
 		
 		// m.y. //
-//		System.out.println("모든 단어 검색 시작");
-//		wordController.allVoca();
-//		System.out.println("=============================");
-//		System.out.println();
-//
-//		System.out.println("한글 단어 검색 후 영어 출력 시작");
+		System.out.println("모든 단어 검색 시작");
+		wordController.allVoca();
+		System.out.println("=============================");
+		System.out.println();
+
+// 		System.out.println("한글 단어 검색 후 영어 출력 시작");
 //		wordController.searchVoca("양보하다");
-//		System.out.println("=============================");
+// 		System.out.println("=============================");
 //		System.out.println();
 //
 //		System.out.println("영어 단어 추가 시작");
@@ -79,34 +80,34 @@ public class RunningStartView {
 
 
 		// y.j. //
-//		WordController controller = WordController.getInstance();
-//		MywordController mycontroller = MywordController.getInstance();
-//
-//		System.out.println("모든 단어 검색");
-//		controller.allVoca();
-//
-//		//		System.out.println("조인된 테이블1 출력");
-//		//		controller.joinVoca();
-//
-//		// myword 즐겨찾기 모두 출력
-//		System.out.println("조인된 테이블2 출력");
+//		System.out.println("조인된 테이블1 출력");
+//		wordController.joinVoca();
+		
+		// myword 즐겨찾기 모두 출력
+		System.out.println("조인된 테이블2 출력");
 //		mycontroller.join2Voca();
-//
-//		// 즐겨찾기에 단어추가하기
-//		// myword에 단어 추가하는데 먼저  myword에 추가된 단어이면 북마크 불가능
-//		// bookmark(new Word());
-//		System.out.println("====영어단어 즐겨찾기하기====");
-//		// myword - word
-//		mycontroller.bookmark(3);
-//		//		mycontroller.join2Voca();
-//
-//		// 즐겨찾기에서 단어삭제하기
-//		System.out.println("====영어단어 삭제하기====");
-//		mycontroller.deleteBmark(6);
-//		//		mycontroller.join2Voca();
-		// y.j. //
-
+		
+		// 즐겨찾기에 단어추가하기
+		// myword에 단어 추가하는데 먼저  myword에 추가된 단어이면 북마크 불가능
+		// bookmark(new Word());
+		System.out.println("====영어단어 즐겨찾기하기====");
+//		mycontroller.bookmark(11);
+//		mycontroller.join2Voca();
+		
+		// 즐겨찾기에서 단어삭제하기
+		System.out.println("====영어단어 삭제하기====");
+//		mycontroller.deleteBmark(12);
+//		mycontroller.join2Voca();
+		
+//		System.out.println("===== 영어단어mynumber로 1개만 출력하기=====");
+//		mycontroller.oneWord(1);
+		
+		// 몇개씩 출력하기
+		System.out.println("==== 출력하고싶은 갯수만큼 출력하기 ====");
+		mycontroller.join3Voca(5);
+		// y. h. //
 	}
+		
 }
 
 
