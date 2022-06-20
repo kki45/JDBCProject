@@ -10,6 +10,7 @@ import voca.dbutil.DBUtil;
 import voca.dto.MywordDTO;
 import voca.dto.WordForm;
 import voca.dto.WordMyword;
+import voca.dto.mywordIndexDTO;
 
 public class MywordDAO {
 
@@ -66,6 +67,33 @@ public class MywordDAO {
 		}
 		return list1;
 	}
+	
+	// 여러개 출력
+		public static ArrayList<mywordIndexDTO> myIndex(int num) throws SQLException {
+			Connection con = null;
+			PreparedStatement pstmt = null;
+			ResultSet rset = null;
+			ArrayList<mywordIndexDTO> list1 = null;
+
+			try {
+				con = DBUtil.getConnection();
+				pstmt = con.prepareStatement("select w.english_word, f.form_name, w.korean_word " + 
+						" from myword m, word w, form f" + 
+						" where m.word_id = w.word_id and w.form_id = f.form_id" + 
+						" order by m.my_number limit ?");
+				pstmt.setInt(1, num);
+				rset = pstmt.executeQuery();
+
+				list1 = new ArrayList<mywordIndexDTO>();
+				while (rset.next()) {
+					list1.add(new mywordIndexDTO(rset.getString(1), rset.getString(2), rset.getString(3)));
+				}
+			}
+			finally {
+				DBUtil.close(con, pstmt, rset);
+			}
+			return list1;
+		}
 
 	// mywordT 출력 - mynumber
 	public static MywordDTO myWordto(int myNumber) throws SQLException {

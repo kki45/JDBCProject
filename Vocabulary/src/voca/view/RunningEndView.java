@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import voca.dto.Word;
 import voca.dto.WordForm;
 import voca.dto.WordMyword;
+import voca.dto.mywordIndexDTO;
 import voca.dto.WordGameDTO;
 import voca.vo.WordFormVO;
 
@@ -60,11 +61,11 @@ public class RunningEndView {
 	}
 	
 	// 여러개 출력	
-	public static void join3Voca(ArrayList<WordMyword> join3Voca) {
-		int length = join3Voca.size();
+	public static void myIndex(ArrayList<mywordIndexDTO> myindex) {
+		int length = myindex.size();
 		if( length != 0) {
 			for(int index = 0; index < length; index ++) {
-				System.out.println(join3Voca.get(index));
+				System.out.println(index + 1 + ":"+myindex.get(index));
 			}
 		}
 	}
@@ -83,6 +84,7 @@ public class RunningEndView {
 		System.out.println("총점 50점");
 		System.out.println( getData.getUserName() + "님의 점수는 " + getData.getScore() + "점입니다.");
 	}
+
 
 
 }

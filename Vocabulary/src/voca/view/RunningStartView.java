@@ -16,33 +16,35 @@ public class RunningStartView {
 		MywordController mycontroller = MywordController.getInstance();
 
 		// m.y. //
-//		System.out.println("모든 단어 검색 시작");
-//		wordController.allVoca();
-//		System.out.println("=============================");
-//		System.out.println();
+		System.out.println("모든 단어 검색 시작");
+		wordController.allVoca();
+		System.out.println("=============================");
+		System.out.println();
 //
-//		System.out.println("한글 단어 검색 후 영어 출력 시작");
-//		wordController.searchVoca("사과");
-//		System.out.println("=============================");
-//		System.out.println();
+		System.out.println("한글 단어 검색 후 영어 출력 시작");
+//		wordController.searchVoca("성취하다");
+		System.out.println("=============================");
+		System.out.println();
 //
-//		System.out.println("영어 단어 추가 시작");
+		System.out.println("영어 단어 추가 시작");
 //		wordController.addVoca(new WordFormVO("apple", "사과", 1));
-//		wordController.searchVoca("사과");
-//		System.out.println("=============================");
-//		System.out.println();
-
+//		wordController.addVoca(new WordFormVO("ant", "개미", 1));
+//		wordController.searchVoca("개미");
+		System.out.println("=============================");
+		System.out.println();
 //
+		System.out.println("단어 수정");
 //		wordController.updateVoca(new WordFormVO(59, "jejunum", "빈창자", 1));
-////		//		wordController.updateVoca(new WordFormVO(64, "cancer", "암", 1));
+//		wordController.updateVoca(new WordFormVO(64, "cancer", "암", 1));
 //		wordController.searchVoca("빈창자");
-//		System.out.println("=============================");
-//		System.out.println();
+		System.out.println("=============================");
+		System.out.println();
 //
-//		wordController.deleteVoca(new WordFormVO(60));
+		System.out.println("단어 삭제");
+		wordController.deleteVoca(new WordFormVO(1));
 //		wordController.searchVoca("암");
-//		System.out.println();
-//		System.out.println("=============================");
+		System.out.println();
+		System.out.println("=============================");
 		// m.y. //
 
 		// y.h. //
@@ -87,7 +89,7 @@ public class RunningStartView {
 		// 즐겨찾기에 단어추가하기
 //		 myword에 단어 추가하는데 먼저 myword에 추가된 단어이면 북마크 불가능
 //		System.out.println("====영어단어 즐겨찾기하기====");
-//		mycontroller.bookmark(4);
+//		mycontroller.bookmark(12);
 //		mycontroller.join2Voca();
 
 		// 즐겨찾기에서 단어삭제하기
@@ -99,8 +101,8 @@ public class RunningStartView {
 //		mycontroller.oneWord(5);
 //
 //		// 몇개씩 출력하기
-//		System.out.println("==== 출력하고싶은 갯수만큼 출력하기 ====");
-//		mycontroller.join3Voca(2);
+		System.out.println("==== 출력하고싶은 갯수만큼 출력하기 ====");
+		mycontroller.myIndex(2);
 		// y. h. //
 	}
 

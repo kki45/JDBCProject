@@ -62,12 +62,13 @@ public class MywordController {
 	}
 	
 	// 여러개 출력
-	public void join3Voca(int num) {
+	public void myIndex(int num) {
 		try {
-			RunningEndView.join3Voca(myservice.join3Voca(num));
+			RunningEndView.myIndex(myservice.myIndex(num));
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
+
 
 }
