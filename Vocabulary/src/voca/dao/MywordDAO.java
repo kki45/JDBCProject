@@ -40,7 +40,7 @@ public class MywordDAO {
 		return list1;
 	}
 
-	//여러개 출력
+	// 여러개 출력
 	public static ArrayList<WordMyword> join3Voca(int num) throws SQLException {
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -166,7 +166,7 @@ public class MywordDAO {
 
 	}
 
-	//즐겨찾기에 영단어 삭제
+	// 즐겨찾기에 영단어 삭제
 	public static boolean deleteWord(int my_number) throws SQLException {
 	Connection con = null;
 	PreparedStatement pstmt = null;
